@@ -1,0 +1,4 @@
+AuthType BASIC
+AuthName "Input Your ID and Password."
+AuthUserFile /var/www/html/passfile
+require valid-user

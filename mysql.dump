@@ -1,0 +1,132 @@
+-- MySQL dump 10.13  Distrib 5.6.31, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: vuln
+-- ------------------------------------------------------
+-- Server version	5.6.31-0ubuntu0.15.10.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `bookTbl`
+--
+
+DROP TABLE IF EXISTS `bookTbl`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bookTbl` (
+  `id` int(11) DEFAULT NULL,
+  `bid` varchar(255) DEFAULT NULL,
+  `date` datetime DEFAULT NULL,
+  `author` varchar(255) DEFAULT NULL,
+  `item` varchar(255) DEFAULT NULL,
+  `flag` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bookTbl`
+--
+
+LOCK TABLES `bookTbl` WRITE;
+/*!40000 ALTER TABLE `bookTbl` DISABLE KEYS */;
+INSERT INTO `bookTbl` VALUES (1,'1000203503','2012-06-23 00:00:00','新井悠','Bugハンター日記',1),(2,'1000203501','2012-06-19 00:00:00','上野宣','めんどうくさいWebセキュリティ',1),(3,'1000103409','2010-06-02 00:00:00','明智光秀','本能寺の変',0),(4,'1000093050','2005-06-17 00:00:00','上野宣','今夜わかるメールプロトコル',1),(5,'1000085771','2004-12-09 00:00:00','上野宣','今夜わかるHTTP',1),(6,'1000072889','2004-12-09 00:00:00','上野宣','今夜わかるTCP/IP',1),(7,'1000042384','2003-04-21 00:00:00','上野宣','ネットワーク初心者のためのTCP/IP入門',0);
+/*!40000 ALTER TABLE `bookTbl` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `msgTbl`
+--
+
+DROP TABLE IF EXISTS `msgTbl`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `msgTbl` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(40) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `postdate` datetime NOT NULL,
+  UNIQUE KEY `id_2` (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `msgTbl`
+--
+
+LOCK TABLES `msgTbl` WRITE;
+/*!40000 ALTER TABLE `msgTbl` DISABLE KEYS */;
+INSERT INTO `msgTbl` VALUES (4,'上野宣','1月は正月で酒が飲めるぞ','2017-01-04 00:39:14'),(6,'織田信長','本能寺なう(・∀・)','2017-01-04 00:54:36'),(7,'明智光秀','ごめん、ちょっと俺、本能寺に行ってくるわ。','2017-01-04 00:54:51');
+/*!40000 ALTER TABLE `msgTbl` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sqlidemo`
+--
+
+DROP TABLE IF EXISTS `sqlidemo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sqlidemo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) DEFAULT NULL,
+  `pass` varchar(128) DEFAULT NULL,
+  `word` varchar(128) DEFAULT NULL,
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sqlidemo`
+--
+
+LOCK TABLES `sqlidemo` WRITE;
+/*!40000 ALTER TABLE `sqlidemo` DISABLE KEYS */;
+INSERT INTO `sqlidemo` VALUES (1,'Administrator','adminpass','クロスサイト・スクリプティング'),(3,'tricorder','enterprise','BoF');
+/*!40000 ALTER TABLE `sqlidemo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `userTbl`
+--
+
+DROP TABLE IF EXISTS `userTbl`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `userTbl` (
+  `user` varchar(50) NOT NULL,
+  `pass` varchar(50) DEFAULT NULL,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`user`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `userTbl`
+--
+
+LOCK TABLES `userTbl` WRITE;
+/*!40000 ALTER TABLE `userTbl` DISABLE KEYS */;
+INSERT INTO `userTbl` VALUES ('admin','21232f297a57a5a743894a0e4a801fc3','管理者'),('akechi','5f4dcc3b5aa765d61d8327deb882cf99','明智光秀'),('oda','5f4dcc3b5aa765d61d8327deb882cf99','織田信長'),('ueno','5273aa2b3240957abf01e3afda88629d','上野宣');
+/*!40000 ALTER TABLE `userTbl` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2021-01-04 13:00:20

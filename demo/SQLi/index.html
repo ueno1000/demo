@@ -1,0 +1,21 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SQLi</title>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+</head>
+<body>
+  <h3>著者検索（絶版書籍は表示しません）</h3>
+  <form action="sqli.php" method="get" name="mail" id="mail">
+    <label for="q">Author:</label>
+    <input class="button-primary" type="text" name="q" id="q" value="上野宣">
+    <input class="button-primary" type="submit" name="submit" id="submit" value="送信">
+  </form>
+  <h4>PoC</h4>
+  <ul>
+    <li>上野宣' -- </li>
+    <li>' UNION SELECT user,pass FROM userTbl -- </li>
+  </ul>
+</body>
+</html>

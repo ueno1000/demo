@@ -1,0 +1,4 @@
+AuthType Digest
+AuthName "DIGEST"
+AuthUserFile /var/www/html/passfile.digest
+require valid-user

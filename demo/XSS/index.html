@@ -1,0 +1,28 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>XSS</title>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+</head>
+<body>
+<h3>コメントを送信</h3>
+<form action="xss.php" method="get" name="mail" id="mail">
+  <label for="q">コメント:</label>
+  <input class="button-primary" type="text" name="q" id="q">
+  <input class="button-primary" type="submit" name="submit" id="submit" value="送信">
+</form>
+<hr>
+<h3>属性値のXSS</h3>
+<ul>
+  <li><a href="xss2.php?uid=0123456789">0123456789</a></li>
+  <li><a href="xss2.php?uid=abc onmouseover=javascript:alert('xss')">XSS</a></li>
+</ul>
+<hr>
+<h3>DOM based XSS</h3>
+<ul>
+  <li><a href="dombasedxss.php">DOM based XSS</a></li>
+</ul>
+
+</body>
+</html>
