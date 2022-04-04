@@ -3,11 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>CSS Injection</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
   </head>
   <body>
-    <p>何色で表示しますか？</p>
-    <p><a href="cssi.php?q=red">red</a></p>
-    <p><a href="cssi.php?q=blue">blue</a></p>
-    <p>POC: <a href="cssi.php?q=;display:none;}body::after{content:%22FAKE%22">;display:none;}body::after{content:"FAKE"</a></p>
+    <h3>何色で表示しますか？</h3>
+    <ul>
+      <li><a href="cssi.php?q=red">red</a></li>
+      <li><a href="cssi.php?q=blue">red</a></li>
+      <li>POC: <a href="cssi.php?q=;display:none;}body::after{content:%22FAKE%22">;display:none;}body::after{content:"FAKE"</a></li>
+    </ul>
   </body>
 </html>
