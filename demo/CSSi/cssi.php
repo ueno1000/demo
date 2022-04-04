@@ -8,6 +8,8 @@
     </style>
     <meta charset="utf-8">
     <title>CSS Injection</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
   </head>
   <body>
     <div id="vuln">TARGET</div>
