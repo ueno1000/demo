@@ -16,26 +16,22 @@
   }
   
   $loader = new \Twig\Loader\ArrayLoader([
-    'index' => 'Hello '.$q,
+    'index' => '<h3>Hello '.$q.'</h3>',
   ]);
   $twig = new \Twig\Environment($loader);
   
   echo $twig->render('index');
   ?>
   <hr>
-  <p>
     <form method="get" action="ssti.php">
       <input type="text" name="q" value="World">
       <input type="submit" value="submit">
     </form>
-  </p>
   <hr>
-  <p>
     <form method="get" action="ssti.php">
       <input type="text" name="q" value="{{7*7}}">
       <input type="submit" value="submit">
     </form>
-  </p>
   <hr>
   <a href="./">戻る</a>
 </body>
