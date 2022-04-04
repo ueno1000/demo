@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Relative Path Overwrite (RPO)</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
   </head>
   <body>
     <form method="post" action="./addname.php">

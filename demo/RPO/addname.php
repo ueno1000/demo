@@ -13,7 +13,8 @@ $name = $db->querySingle('SELECT name FROM foo ORDER BY id DESC');
 ?>
 <html>
   <head>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
     <title>Relative Path Overwrite (RPO)</title>
   </head>
   <body>
