@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Injection</title>
+  </head>
+  <body>
+    <p>何色で表示しますか？</p>
+    <p><a href="cssi.php?q=red">red</a></p>
+    <p><a href="cssi.php?q=blue">blue</a></p>
+    <p>POC: <a href="cssi.php?q=;display:none;}body::after{content:"FAKE"">;display:none;}body::after{content:"FAKE"</a></p>
+  </body>
+</html>
