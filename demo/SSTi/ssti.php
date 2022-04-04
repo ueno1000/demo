@@ -27,12 +27,10 @@
       <input type="text" name="q" value="World">
       <input type="submit" value="submit">
     </form>
-  <hr>
     <form method="get" action="ssti.php">
       <input type="text" name="q" value="{{7*7}}">
       <input type="submit" value="submit">
     </form>
-  <hr>
   <a href="./">戻る</a>
 </body>
 </html>
