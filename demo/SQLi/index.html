@@ -9,12 +9,12 @@
   <h3>Author Search (Out-of-print books are hidden)</h3>
   <form action="sqli.php" method="get" name="mail" id="mail">
     <label for="q">Author:</label>
-    <input class="button-primary" type="text" name="q" id="q" value="上野宣">
+    <input class="button-primary" type="text" name="q" id="q" value="Sen Ueno">
     <input class="button-primary" type="submit" name="submit" id="submit" value="Submit">
   </form>
   <h4>PoC</h4>
   <ul>
-    <li>上野宣' -- </li>
+    <li>Sen Ueno' -- </li>
     <li>' UNION SELECT user,pass FROM userTbl -- </li>
   </ul>
 </body>
