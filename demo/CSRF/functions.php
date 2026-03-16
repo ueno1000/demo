@@ -1,13 +1,13 @@
 <?php
 /**
- * ログイン状態によってリダイレクトを行うsession_startのラッパー関数
- * 初回時または失敗時にはヘッダを送信してexitする
+ * Wrapper around session_start that redirects based on login state
+ * Sends headers and exits on first access or failure
  */
 function require_unlogined_session()
 {
-  // セッション開始
+  // Start session
   @session_start();
-  // ログインしていれば / に遷移
+  // Redirect to /index.php when already logged in
   if (isset($_SESSION['username'])) {
       header('Location: ./index.php');
       exit;
@@ -15,9 +15,9 @@ function require_unlogined_session()
 }
 function require_logined_session()
 {
-  // セッション開始
+  // Start session
   @session_start();
-  // ログインしていなければ /login.php に遷移
+  // Redirect to /login.php when not logged in
   if (!isset($_SESSION['username'])) {
       header('Location: ./login.php');
       exit;
@@ -25,30 +25,30 @@ function require_logined_session()
 }
 
 /**
- * CSRFトークンの生成
+ * Generate CSRF token
  *
- * @return string トークン
+ * @return string Token
  */
 function generate_token()
 {
-  // セッションIDからハッシュを生成
+  // Generate hash from session ID
   return hash('sha256', session_id());
 }
 
 /**
- * CSRFトークンの検証
+ * Validate CSRF token
  *
  * @param string $token
- * @return bool 検証結果
+ * @return bool Validation result
  */
 function validate_token($token)
 {
-  // 送信されてきた$tokenがこちらで生成したハッシュと一致するか検証
+  // Verify submitted $token matches locally generated hash
   return $token === generate_token();
 }
 
 /**
- * htmlspecialcharsのラッパー関数
+ * Wrapper around htmlspecialchars
  *
  * @param string $str
  * @return string

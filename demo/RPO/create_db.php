@@ -18,11 +18,11 @@
     
     $db = new MyDB();
     $db->exec('CREATE TABLE foo (id INTEGER primary key, name STRING)');
-    $db->exec("INSERT INTO foo (name) VALUES ('織田信長')");
+    $db->exec("INSERT INTO foo (name) VALUES ('Nobunaga Oda')");
     
     $result = $db->querySingle('SELECT name FROM foo');
     ?>
-    データベースを初期化してユーザー「<?php echo $result ?>」を登録しました。
-    <p><a href="./">戻る</a></p>
+    Initialized the database and registered user "<?php echo $result ?>".
+    <p><a href="./">Back</a></p>
   </body>
 </html>

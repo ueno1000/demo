@@ -2,17 +2,17 @@
 require_once __DIR__ . '/functions.php';
 require_logined_session();
 
-// CSRFトークンを検証
+// Validate CSRF token
 if (!validate_token(filter_input(INPUT_GET, 'token'))) {
-    // 「400 Bad Request」
+    // "400 Bad Request"
     header('Content-Type: text/plain; charset=UTF-8', true, 400);
-    exit('トークンが無効です');
+    exit('Invalid token');
 }
 
-// セッション用Cookieの破棄
+// Delete session cookie
 setcookie(session_name(), '', 1);
-// セッションファイルの破棄
+// Delete session file
 session_destroy();
-// ログアウト完了後に /login.php に遷移
+// Redirect to /login.php after logout
 header('Location: ./login.php');
 ?>

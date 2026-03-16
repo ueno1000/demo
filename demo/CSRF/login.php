@@ -8,7 +8,7 @@ $password = 'toor';
 try {
   $db = new PDO($dsn,$user,$password);
 } catch (PDOException $e) {
-  die("接続失敗" . $db->getMessage());
+  die("Connection failed: " . $db->getMessage());
 }
 
 $username = filter_input(INPUT_POST, 'username');
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       header('Location: ./index.php');
       exit;
     }
-    // 認証が失敗したとき
+    // When authentication fails
     // 「403 Forbidden」
     http_response_code(403);
 }
@@ -49,7 +49,7 @@ header('Content-Type: text/html; charset=UTF-8');
   </form>
   (akechi/password, oda/password)
   <?php if (http_response_code() === 403): ?>
-  <h4 style="color: red;">ユーザ名またはパスワードが違います</h4>
+  <h4 style="color: red;">Incorrect username or password</h4>
   <?php endif; ?>
   <hr>
 <?php

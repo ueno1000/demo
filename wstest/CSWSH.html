@@ -5,8 +5,8 @@
     <title>Cross-Site WebSocket Hijacking (CSWSH)</title>
   </head>
   <body>
-    <h3>罠サイト</h3>
-    攻撃者は待ち受けサーバーを用意しておく必要がある
+    <h3>Trap Site</h3>
+    The attacker needs to prepare a listener server in advance.
   <script>
     websocket = new WebSocket('ws://localhost:3000','wstest');
     websocket.onopen = start
