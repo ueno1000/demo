@@ -5,7 +5,7 @@ use CGI ':standard';
 
 my $id = param('id');
 
-# ���O�C���O�Ȃ烍�O�C�����ʂ��\���B
+# If not logged in, show the login form.
 if( ! (param('id') && param('pw')) ) {
   print <<END_OF_LOGIN_PROMPT;
 Content-Type: text/html

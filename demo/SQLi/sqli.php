@@ -1,12 +1,12 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>著者検索</title>
+  <title>Author Search</title>
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/skeleton.css">
 </head>
 <body>
-<h3>検索結果</h3>
+<h3>Search Results</h3>
 <?php
 $q = $_GET['q'];
 
@@ -18,14 +18,14 @@ if (mysqli_connect_errno()) {
 
 $result = $mysqli->query("SELECT author,item FROM bookTbl WHERE author='$q' and flag=1");
 if (!$result) {
-    die('クエリーが失敗しました。'.mysql_error());
+    die('Query failed: '.mysql_error());
 }
 ?>
 <table>
   <thead>
     <tr>
-      <th>著者名</th>
-      <th>書名</th>
+      <th>Author</th>
+      <th>Book Title</th>
     </tr>
   </thead>
   <tbody>
