@@ -20,47 +20,47 @@ const server = http.createServer((request, response) => {
 
 })
 
-//リスナー
+// Listener
 server.listen(PORT, () => {
-  console.log(`${new Date()} サーバー起動 http://localhost:${PORT}`)
+  console.log(`${new Date()} Server started http://localhost:${PORT}`)
 })
 
-// WebSocketサーバの設定
+// WebSocket server settings
 const wsServer = new WebSocketServer({
   httpServer: server,
-  // autoAcceptConnections は本番環境で使っちゃだめ
+  // Do not use autoAcceptConnections in production
   autoAcceptConnections: false
 })
 
 const originIsAllowed = (origin) => {
-  // アクセス元が信頼できるかを検証する用の関数。今回はlocal環境なので常にtrue
+  // Validate whether the request origin is trusted. In this local demo we always return true.
   return true
 }
 
 wsServer.on('request', (request) => {
   if (!originIsAllowed(request.origin)) {
     request.reject()
-    console.log(`${new Date()} ${request.origin} からのアクセスが拒否されました`)
+    console.log(`${new Date()} ${request.origin} access from origin was rejected`)
   }
 
   const connection = request.accept('wstest', request.origin)
-  console.log(`${new Date()} 接続が許可されました`)
+  console.log(`${new Date()} connection accepted`)
   
   connection.on('message', message => {
   switch (message.type) {
     case 'utf8':
-      console.log(`メッセージ: ${message.utf8Data}`)
+      console.log(`message: ${message.utf8Data}`)
       //connection.sendUTF(message.utf8Data)
       wsServer.broadcast('Your message is '+message.utf8Data+' !!')
       break
     case 'binary':
-      console.log(`バイナリデータ: ${message.binaryData.length}byte`)
+      console.log(`binary data: ${message.binaryData.length}byte`)
       connection.sendBytes(message.binaryData)
       break
   }
 })
 
   connection.on('close', (reasonCode, description) => {
-    console.log(`${new Date()} ${connection.remoteAddress} が切断されました`)
+    console.log(`${new Date()} ${connection.remoteAddress} was disconnected`)
   })
 })
