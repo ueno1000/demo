@@ -8,13 +8,13 @@ $password = 'toor';
 try {
   $db = new PDO($dsn,$user,$password);
 } catch (PDOException $e) {
-  die("接続失敗" . $db->getMessage());
+  die("Connection failed: " . $db->getMessage());
 }
 
 $username = $_POST["id"];
 $password = $_POST['pw'];
 
-// POSTメソッドのときのみ実行
+// Execute only for POST method
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (
         validate_token(filter_input(INPUT_POST, 'token')) &&
@@ -22,19 +22,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $password,
             isset($hashes[$username])
                 ? $hashes[$username]
-                : '$2y$10$abcdefghijklmnopqrstuv' // ユーザ名が存在しないときだけ極端に速くなるのを防ぐ
+                : '$2y$10$abcdefghijklmnopqrstuv' // Prevent timing differences when username does not exist
         )
     ) {
-        // 認証が成功したとき
-        // セッションIDの追跡を防ぐ
+        // When authentication succeeds
+        // Prevent session ID fixation
         session_regenerate_id(true);
-        // ユーザ名をセット
+        // Set username
         $_SESSION['username'] = $username;
-        // ログイン完了後に / に遷移
+        // Redirect to / after login
         header('Location: /');
         exit;
     }
-    // 認証が失敗したとき
+    // When authentication fails
     // 「403 Forbidden」
     http_response_code(403);
 }
@@ -46,12 +46,12 @@ if(login($_POST["id"],$_POST["pw"],$db) == true){
   session_set_cookie_params(1209600);
 	session_start();
 	setcookie(session_name(),session_id(),time()+1209600);
-  // 認証成功
+  // Auth success
 
 
 
 }else{
-  die("ログインに失敗しました");
+  die("Login failed");
 }
 
 function login($user,$password,$db)

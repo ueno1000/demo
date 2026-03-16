@@ -1,22 +1,22 @@
 <html>
   <head>
   <meta charset="UTF-8">
-  <title>HTTPヘッダーインジェクション</title>
+  <title>HTTP Header Injection</title>
 
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/skeleton.css">
 </head>
 <body>
-<h3>趣味はなんですか？（指定した値をCookieにセットします。）</h3>
+<h3>What is your hobby? (Sets the specified value in a cookie.)</h3>
 <ul>
-  <li><a href="cookie.cgi?cat=book">読書</a></li>
-  <li><a href="cookie.cgi?cat=movie">映画鑑賞</a></li>
+  <li><a href="cookie.cgi?cat=book">Reading</a></li>
+  <li><a href="cookie.cgi?cat=movie">Watching movies</a></li>
   <li><a href="cookie.cgi?cat=book%0D%0ASet-Cookie:%20value=hack">HTTP Header Injection (Set-Cookie)</a></li>
 </ul>
-<h3>趣味はなんですか？（指定した値でリダイレクトします。）</h3>
+<h3>What is your hobby? (Redirects using the specified value.)</h3>
 <ul>
-  <li><a href="location.cgi?cat=book">読書</a></li>
-  <li><a href="location.cgi?cat=movie">映画鑑賞</a></li>
+  <li><a href="location.cgi?cat=book">Reading</a></li>
+  <li><a href="location.cgi?cat=movie">Watching movies</a></li>
   <li><a href="location.cgi?cat=jogging%0D%0ALocation: http://www.yahoo.co.jp/">HTTP Header Injection (Location)</a></li>
 </ul>
 </body>

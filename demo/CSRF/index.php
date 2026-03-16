@@ -8,7 +8,7 @@ $password = 'toor';
 try {
   $db = new PDO($dsn,$user,$password);
 } catch (PDOException $e) {
-  die("接続失敗" . $db->getMessage());
+  die("Connection failed: " . $db->getMessage());
 }
 
 # User Name
@@ -40,8 +40,8 @@ header('Content-Type: text/html; charset=UTF-8');
 </head>
 <body>
   <h3>CSRF BBS</h3>
-  <h5>ようこそ <?=h($username)?> さん</h5>
-  <p><a href="logout.php?token=<?=h(generate_token())?>">ログアウト</a></p>
+  <h5>Welcome, <?=h($username)?></h5>
+  <p><a href="logout.php?token=<?=h(generate_token())?>">Logout</a></p>
 
   <form action="" method="post">
     <label for="comment">Comment:</label>
