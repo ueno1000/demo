@@ -1,8 +1,8 @@
-[HTTPの教科書]
-肩肘張らずにWebの仕組みとプロトコルを完全理解する
+[HTTP Textbook]
+A complete and approachable guide to how the web works and its protocols.
 
-誰もがPCやスマホから日常的にさまざまに利用しているWebを支えているのが“プロトコル”。
-説明で多用される「サーバー同士が会話して」の“会話”を成り立たせる役目を担っています。
-では、「会話を成り立たせる」とはどういうことでしょう。
-本書はWebだけにとどまらず、インターネット自体の基盤として欠かせないプロトコルを、
-最新の技術動向を含め、中学生でも理解できるくらい平易に、現場の技術者が喜ぶくらい実践的に解説します。
+The web we all use daily from PCs and smartphones is supported by protocols.
+They are what make the often-mentioned "conversation between servers" possible.
+So what does it actually mean to "enable conversation"?
+This book explains protocols essential not only to the web but to the internet itself,
+covering the latest trends in language simple enough for students yet practical for engineers.

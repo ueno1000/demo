@@ -8,7 +8,7 @@ $password = 'toor';
 try {
   $db = new PDO($dsn,$user,$password);
 } catch (PDOException $e) {
-  die("接続失敗" . $db->getMessage());
+  die("Connection failed: " . $db->getMessage());
 }
 
 $delid = filter_input(INPUT_GET,'id');
