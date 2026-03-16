@@ -18,7 +18,7 @@ $name = $db->querySingle('SELECT name FROM foo ORDER BY id DESC');
     <title>Relative Path Overwrite (RPO)</title>
   </head>
   <body>
-    <p>「<?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8')?>」として友達申請を送信しました。</p>
-    <p><a href="./">戻る</a></p>
+    <p>「<?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8')?>" was submitted as a friend request.</p>
+    <p><a href="./">Back</a></p>
   </body>
 </html>

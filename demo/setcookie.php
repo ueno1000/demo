@@ -10,7 +10,7 @@
     setcookie('HttpOnly1',"Yes_HttpOnly",time()+3600,'/','',0,1);
     setcookie('HttpOnly2',"No_HttpOnly",time()+3600,'/','',0,0);
   ?>
-  <h3>Cookieを発行しました。</h3>
+  <h3>Issued cookies.</h3>
   <script type="text/javascript">
   alert(document.cookie);
   </script>

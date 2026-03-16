@@ -8,14 +8,14 @@ my $sp = 1;
 
 my $category = $cgi->param('cat');
 
-# PC用サイトへリダイレクト
+# Redirect to desktop site
 if($sp)
   {
     my $url = "http://pc.example.com/?cat=$category";
     print "Location: $url\n\n";
     exit 0;
   }else{
-    # スマートフォン用サイトへリダイレクト
+    # Redirect to smartphone site
     my $url = "http://sp.example.com/?cat=$category";
     print "Location: $url\n\n";
     exit 0;

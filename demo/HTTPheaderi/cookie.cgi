@@ -15,13 +15,13 @@ Set-Cookie: category=$category
 <html>
   <head>
   <meta charset="UTF-8">
-  <title>HTTPヘッダーインジェクション</title>
+  <title>HTTP Header Injection</title>
 
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/skeleton.css">
 </head>
 <body>
-<h3>Cookieをセットしました。</h3>
+<h3>Cookie has been set.</h3>
 </body>
 </html>
 END_OF_HTML

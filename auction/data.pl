@@ -3,28 +3,28 @@ use strict;
 sub get_data {
   my $data = [
     {
-      subject => 'お台場のガンダム・訳あり！',
+      subject => 'Odaiba Gundam (with issues)!',
       image   => '<IMG src="DSC00486.JPG">',
       from    => 'banzai',
-      bidding_price => '15,500円',
+      bidding_price => '15,500 JPY',
       bidder  => '8',
-      days    => '2日',
+      days    => '2 days',
     },
     {
-      subject => 'イタリアの自転車◆新品同様',
+      subject => 'Bicycle from Italy ◆ Like New',
       image   => '<IMG src="DSC09057.JPG">',
       from    => 'jitensya',
-      bidding_price => '50,000円',
+      bidding_price => '50,000 JPY',
       bidder  => '15',
-      days    => '3時間',
+      days    => '3 hours',
     },
     {
-      subject => 'アメリカのパソコン◆ジャンク品',
+      subject => 'U.S. PC ◆ Junk Item',
       image   => '<IMG src="DSC08954.JPG">',
       from    => 'pineapple',
-      bidding_price => '3,000円',
-      bidder  => '3人',
-      days    => '4日',
+      bidding_price => '3,000 JPY',
+      bidder  => '3',
+      days    => '4 days',
     },
 
 

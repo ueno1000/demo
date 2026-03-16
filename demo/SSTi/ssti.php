@@ -31,6 +31,6 @@
       <input type="text" name="q" value="{{7*7}}">
       <input type="submit" value="submit">
     </form>
-  <a href="./">戻る</a>
+  <a href="./">Back</a>
 </body>
 </html>
